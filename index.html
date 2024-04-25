@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>SHOP</title>
+</head>
+
+<body>
+    <div id="categories" class="block">
+        <h2>Categories</h2>
+        <ul>
+            <li onclick="showProducts('Cars')">Cars</li>
+            <li onclick="showProducts('Motorcycles')">Motorcycles</li>
+
+        </ul>
+    </div>
+
+    <div id="products" class="block">
+        <h2>Products</h2>
+        <ul id="productList">
+
+        </ul>
+    </div>
+
+    <div id="productInfo" class="block">
+        <h2>Product Information</h2>
+        <p id="productName"></p>
+        <p id="productDescription"></p>
+        <p id="productPrice"></p>
+        <button onclick="showOrderForm()">Buy</button>
+    </div>
+
+    <div id="orderForm" class="block" style="display: none;">
+        <h2>Order Registration Form</h2>
+        <form onsubmit="submitOrder(event)">
+            <label for="clientName">Client Name:</label><br>
+            <input type="text" id="clientName" required><br><br>
+
+            <label for="city">City:</label><br>
+            <select id="city" required>
+            <option value="">Select city</option>
+            <option value="Kyiv">Kyiv</option>
+            <option value="London">London</option>
+            
+          </select><br><br>
+
+            <label for="deliveryMethod">Delivery Method:</label><br>
+            <input type="radio" id="postpaid" name="deliveryMethod" value="Postpaid" checked>
+            <label for="postpaid">Postpaid</label><br>
+            <input type="radio" id="bankCard" name="deliveryMethod" value="Bank Card">
+            <label for="bankCard">Bank Card</label><br><br>
+
+            <label for="quantity">Quantity of products purchased:</label><br>
+            <input type="number" id="quantity" required><br><br>
+
+            <label for="comment">Comment on the order:</label><br>
+            <textarea id="comment" rows="4" cols="50"></textarea><br><br>
+
+            <input type="submit" value="Confirm Order">
+        </form>
+    </div>
+
+    <div id="orderConfirmation" class="block" style="display: none;">
+        <h2>Order Confirmation</h2>
+        <p id="orderDetails"></p>
+    </div>
+    <script src="js/data.js"></script>
+    <script src="js/functions.js"></script>
+    <script src="js/app.js"></script>
+</body>
+
+</html>
